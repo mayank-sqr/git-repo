@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <script src="js/lib/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+    <div class="parentContainer">
+
+            <div class="container">
+            <table id="table_id" class="display" style="width: 100%">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>LOGIN</th>
+                        <th>AVATAR</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                                 
+               
+            </table>
+        </div>
+
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+        </div>
+        <script src="js/lib/jquery-min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/lib/underscore-min.js"></script>
+        <script src="js/lib/backbone-min.js"></script>
+        <script src="js/lib/mustache.js"></script>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        <script src="js/models/UserDetail.js"></script>
+        <script src="js/models/UserRepo.js"></script>
+        <script src="js/collections/UsersDetails.js"></script>
+        <script src="js/collections/UsersRepos.js"></script>
+        <script src="js/views/UserView.js"></script>
+        <script src="js/views/UsersViews.js"></script>
+        <script src="js/views/UserRepoView.js"></script>
+        <script src="js/views/UsersReposView.js"></script>
+        <script src="js/main.js"></script>
+    
+
+<script id="userTemplate" type="text/html">
+
+                    <tr>
+                        <td>{{id}}</td>
+                        <td>{{login}}</td>
+                        <td><img src="{{avatar_url}}"/></td>
+                        <td id="popup-modal"><a data-toggle="modal" data-target="#myModal" data-id="{{id}}" class="btn btn-primary">View Projects</a></td>
+                    </tr>
+ </script>
+        
+
+
+<!-- Modal -->
+
+<script id="modalTemplate" type="text/html">
+
+
+        <p>{{name}}</p>
+        <p>{{full_name}}</p>
+
+
+</script>
+
+
+    </body>
+</html>

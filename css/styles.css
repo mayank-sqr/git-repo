@@ -1,0 +1,53 @@
+body {
+    background-color: #eee;
+}
+
+table > thead > tr > th{
+    background: #fff;
+    border-top: 5px solid #ccc;
+    border-bottom: 5px solid #ccc;
+    border-left: 2.5px solid #ccc;
+    border-right: 2.5px solid #ccc;
+    text-align: center;
+}
+
+table > thead > tr > th:nth-child(1){
+
+    border-left: 5px solid #ccc;
+}
+
+table > thead > tr > th:nth-child(4){
+
+    border-right: 5px solid #ccc;
+}
+
+table > tbody > tr > td{
+    text-align:center;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.parentContainer{
+    margin-top: 50px;
+}
+
+input[type="search"]{
+    border: 1px solid #ccc;
+    box-shadow: none;
+    padding: 5px;
+}
+.parentContainer table.dataTable thead th{
+    border-bottom:5px solid #ccc;
+}
+
+table > tbody > tr > td img{
+    max-width: 150px;
+    max-height: 100px;
+}
+
+table > tbody > tr > td a{
+    background: gray;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+}
