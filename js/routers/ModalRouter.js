@@ -1,10 +1,26 @@
 var ModalRouter = Backbone.Router.extend({
 	routes: {
-		"modal": "modalpopup"
+		"adduser": "addUser",
+		"adduser/:adduserid": "fetchUserDatabyID"
 	},
 
-	modalpopup: function(){
-		var modalView = new ModalView({ el: ".modal-body"});
-		modalView.render();
+	fetchUserDatabyID: function(adduserid){
+		console.log('user ID');
+	},
+
+	addUser: function(){
+		var sds = new UsersDetails();
+		var ddf = sds.fetch({
+			success: function(userResponse){
+				var adduserview = new AddUserView({ 
+					el: ".container", 
+					data: userResponse 
+				});
+				adduserview.render();
+			}
+		});
+
+		
 	}
 });
+

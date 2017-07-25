@@ -25,6 +25,12 @@ $(document).ready(function(){
 
 		});
 
-		
+});
+
+$(window).load(function(){
+
+	var router = new ModalRouter();
+	Backbone.history.start();
+	//console.log(router)
 
 });

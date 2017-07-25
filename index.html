@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
+        <title>Learning Backbone</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,18 +12,23 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
         <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <script src="js/lib/modernizr-2.6.2.min.js"></script>
+
     </head>
     <body>
 
     <div class="parentContainer">
 
             <div class="container">
+
+
+                  <p id="addUser"><a href="#adduser" class="btn btn-primary">Add User</a></p>
+
+            
             <table id="table_id" class="display" style="width: 100%">
                 <thead>
                     <tr>
@@ -36,6 +41,11 @@
                                  
                
             </table>
+
+
+            
+
+
         </div>
 
 
@@ -62,7 +72,8 @@
         </div>
         <script src="js/lib/jquery-min.js"></script>
         <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/lib/modernizr-2.6.2.min.js"></script>
         <script src="js/lib/underscore-min.js"></script>
         <script src="js/lib/backbone-min.js"></script>
         <script src="js/lib/mustache.js"></script>
@@ -71,10 +82,13 @@
         <script src="js/models/UserRepo.js"></script>
         <script src="js/collections/UsersDetails.js"></script>
         <script src="js/collections/UsersRepos.js"></script>
+        
         <script src="js/views/UserView.js"></script>
         <script src="js/views/UsersViews.js"></script>
         <script src="js/views/UserRepoView.js"></script>
         <script src="js/views/UsersReposView.js"></script>
+        <script src="js/views/AddUserView.js"></script>
+        <script src="js/routers/ModalRouter.js"></script>
         <script src="js/main.js"></script>
     
 
@@ -86,6 +100,20 @@
                         <td><img src="{{avatar_url}}"/></td>
                         <td id="popup-modal"><a data-toggle="modal" data-target="#myModal" data-id="{{id}}" class="btn btn-primary">View Projects</a></td>
                     </tr>
+ </script>
+
+
+
+ <script id="adduserTemplate" type="text/html">
+
+                <select id="fetchUser">
+                     <option>Select</option>
+                <% _.each(users, function(value,key) { %>                  
+                    <option><%= value.id %></option>
+                <% });  %>
+
+                </select>
+
  </script>
         
 
