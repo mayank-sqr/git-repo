@@ -1,10 +1,11 @@
 var AddUserView = Backbone.View.extend({
 
-
 	initialize: function(options){
 		//console.log(options);
 			//this.options.data;
 			 this.users = options.data.toJSON();
+			 
+			// console.log(this.model);
 			//console.log('log @users = ', users);
 			/*_.each(users , function (value, key) {
 				//console.log('Value = ', value);
@@ -18,6 +19,45 @@ var AddUserView = Backbone.View.extend({
 			});*/
 
 		},
+	events: {
+		"change #fetchUser": "selectedUser",
+		"click #submit-button": "onFormSubmit"
+	},
+
+	selectedUser: function(e){
+				this.selUser =  $(e.currentTarget).val();
+				this.model = new NewRepo({ user: this.selUser });
+	},
+
+
+	onFormSubmit: function(e) {
+            e.preventDefault();
+            var model = this.model;
+            var newRepoValue = this.$el.find('input[name]').val();
+            var newRepoDescription = this.$el.find('textarea[name]').val();
+            var newRepoAccess = this.$el.find('input[name=gitradio]:checked').val();
+
+            if(this.selUser && newRepoValue && newRepoAccess ){
+
+                        console.log(this.selUser);
+			            console.log(newRepoValue);
+			            console.log(newRepoDescription);
+			            console.log(newRepoAccess);
+
+			            model.set({
+			            	login: this.selUser,
+			            	name: newRepoValue,
+			            	description: newRepoDescription,
+			            	private: newRepoAccess
+			            });
+
+			            model.save();
+			            document.getElementById('gitForm').reset();
+        }
+        else{
+        	console.log("Select User and New Repository are required");
+        }
+    },
 
 	render: function(userResponse){
 		var self = this;
@@ -30,5 +70,7 @@ var AddUserView = Backbone.View.extend({
 		self.$el.html( template({ users: this.users }) );
 
 		return this;
-	}
+	},
+
+
 });

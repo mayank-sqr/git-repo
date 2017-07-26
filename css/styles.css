@@ -52,7 +52,7 @@ table > tbody > tr > td a{
     text-decoration: none;
 }
 
-#addUser{
+#addProject{
     float: right;
     margin-bottom: 25px;
 }
@@ -63,4 +63,22 @@ table > tbody > tr > td a{
     display: block;
     border: 1px solid #ccc;
     padding: 10px;
+}
+
+#gitForm{
+    max-width: 500px;
+    overflow: hidden;
+    margin: 20px auto;
+   /* float: right;*/
+}
+
+.form-group{
+    overflow: hidden;
+}
+
+.submit-btn button{
+    max-width: 200px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
 }
