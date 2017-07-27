@@ -29,7 +29,6 @@ var AddUserView = Backbone.View.extend({
 				this.model = new NewRepo({ user: this.selUser });
 	},
 
-
 	onFormSubmit: function(e) {
             e.preventDefault();
             var model = this.model;
@@ -39,25 +38,34 @@ var AddUserView = Backbone.View.extend({
 
             if(this.selUser && newRepoValue && newRepoAccess ){
 
-                        console.log(this.selUser);
+                       /* console.log(this.selUser);
 			            console.log(newRepoValue);
 			            console.log(newRepoDescription);
-			            console.log(newRepoAccess);
+			            console.log(newRepoAccess);*/
 
-			            model.set({
-			            	login: this.selUser,
+			           model.set({
+			            	//login: this.selUser,
 			            	name: newRepoValue,
 			            	description: newRepoDescription,
 			            	private: newRepoAccess
 			            });
 
-			            model.save();
+			            model.save([], {
+			            	beforeSend: function (xhr) {
+								  var user = "mayank-sqr";// your actual username
+								  var pass = "Mayank123#";// your actual password
+								  var token = user.concat(":", pass);
+								  xhr.setRequestHeader('Authorization', ("Basic ".concat(btoa(token))));
+							}
+			            });
 			            document.getElementById('gitForm').reset();
         }
         else{
         	console.log("Select User and New Repository are required");
         }
     },
+
+    
 
 	render: function(userResponse){
 		var self = this;

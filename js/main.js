@@ -15,7 +15,7 @@ $(document).ready(function(){
 
 
 		//console.log(usersdetails);
-		var usersrepos = new UsersRepos([], { id: 3});
+		var usersrepos = new UsersRepos([], { id: 3 });
 		usersrepos.fetch({
 			success: function(){
 				var urviews = new UsersReposView({ collection: usersrepos });
@@ -28,6 +28,9 @@ $(document).ready(function(){
 });
 
 $(window).load(function(){
+
+	//$('#loading').hide();
+	//$('.parentContainer').show();
 
 	var router = new ModalRouter();
 	Backbone.history.start();

@@ -1,6 +1,5 @@
 var NewRepo = Backbone.Model.extend({
 	defaults: {
-		login: '',
 		name: '',
 		description: '',
 		private: false
@@ -8,10 +7,11 @@ var NewRepo = Backbone.Model.extend({
 
 	initialize: function(options){
 		this.options = options;
+		//console.log(options);
 	},
 
 	url: function(){
-		return "https://api.github.com/users/" + this.options.user +"/repos"
+		return "https://api.github.com/users/" + this.options.user + "/repos"
 	}
 
 	//urlRoot: "https://api.github.com/"+ this.login + "/repos"
