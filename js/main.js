@@ -29,8 +29,7 @@ $(document).ready(function(){
 
 $(window).load(function(){
 
-	//$('#loading').hide();
-	//$('.parentContainer').show();
+	$(".se-pre-con").fadeOut("slow");
 
 	var router = new ModalRouter();
 	Backbone.history.start();

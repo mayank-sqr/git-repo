@@ -2,6 +2,20 @@ body {
     background-color: #eee;
 }
 
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../img/eclipse.gif) center no-repeat #fff;
+}
+
+
+
 table > thead > tr > th{
     background: #fff;
     border-top: 2px solid #ccc;
@@ -11,20 +25,21 @@ table > thead > tr > th{
     text-align: center;
 }
 
-table > thead > tr > th:nth-child(1){
+/*table > thead > tr > th:nth-child(1){
 
-   /* border-left: 2px solid #ccc;*/
+    border-left: 2px solid #ccc;
 }
 
 table > thead > tr > th:nth-child(4){
 
-  /*  border-right: 2px solid #ccc;*/
-}
+    border-right: 2px solid #ccc;
+}*/
 
 table > tbody > tr > td{
     text-align:center;
-    /*border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;*/
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .parentContainer table.dataTable.no-footer {
@@ -33,7 +48,6 @@ table > tbody > tr > td{
 
 .parentContainer{
     margin-top: 50px;
-    /*display: none;*/
 }
 
 input[type="search"]{
@@ -44,6 +58,7 @@ input[type="search"]{
 
 .parentContainer table.dataTable thead th{
     border-bottom:2px solid #ccc;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 table > tbody > tr > td img{
@@ -57,19 +72,54 @@ table > tbody > tr > td a{
     border-radius: 5px;
     color: #fff;
     text-decoration: none;
+
+}
+
+#popup-modal a{
+    font-size: 16px;
+    font-weight: 400;
 }
 
 #addProject{
     float: right;
     margin-bottom: 25px;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
+#addProject a{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.dataTables_wrapper {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.parentContainer .dataTables_wrapper .dataTables_paginate .paginate_button{
+    background: transparent;
+    border: 0;
+}
+
+.parentContainer .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.parentContainer .dataTables_wrapper .dataTables_paginate .paginate_button:active,
+.parentContainer .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.parentContainer .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    background: #204d74;
+    color:#fff!important;
+    border: 0;
+}
+
+
 #fetchUser{
-    width: 150px;
+    width: 100%;
     margin: 0 auto;
     display: block;
     border: 1px solid #ccc;
     padding: 10px;
+    max-width: 500px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 #gitForm{
@@ -79,8 +129,27 @@ table > tbody > tr > td a{
    /* float: right;*/
 }
 
+#gitForm input[type="text"]{
+    border-radius: 0;
+    height: 40px;
+}
+
+#gitForm textarea{
+    border-radius: 0;
+}
+
+#gitForm .col-sm-12{
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
 .form-group{
     overflow: hidden;
+}
+
+.control-label{
+font-weight: 700;
 }
 
 .submit-btn button{
@@ -88,4 +157,5 @@ table > tbody > tr > td a{
     width: 100%;
     margin: 0 auto;
     display: block;
+    font-size: 18px;
 }
