@@ -16,6 +16,7 @@ var AddUserView = Backbone.View.extend({
 				    console.log(output, '#eachobjectunderscore');
 
 				    <% console.log('template console - ',users) %>
+
 			});*/
 
 		},
@@ -52,8 +53,8 @@ var AddUserView = Backbone.View.extend({
 
 			            model.save([], {
 			            	beforeSend: function (xhr) {
-								  var user = "mayank-sqr";// your actual username
-								  var pass = "Mayank123#";// your actual password
+								  var user = "mojombo";// your actual username
+								  var pass = "Mojombo123#";// your actual password
 								  var token = user.concat(":", pass);
 								  xhr.setRequestHeader('Authorization', ("Basic ".concat(btoa(token))));
 							}
@@ -69,13 +70,19 @@ var AddUserView = Backbone.View.extend({
 
 	render: function(userResponse){
 		var self = this;
-		//this.$el.html("Add Users Content");
+		/*//this.$el.html("Add Users Content");
 		//console.log('render userResponse', userResponse);
 		var template = _.template($('#adduserTemplate').html());
 		//console.log('template inside render - ', template);
 		//console.log('this inside render', self.$el);
 		//self.$el.html(template, { users: this.users });
 		self.$el.html( template({ users: this.users }) );
+*/
+
+		var source = $("#adduserTemplate").html();
+		var template = Handlebars.compile(source);
+		var html = template({users: this.users});
+		self.$el.html(html);
 
 		return this;
 	},

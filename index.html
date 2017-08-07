@@ -62,6 +62,7 @@
         <script src="js/lib/underscore-min.js"></script>
         <script src="js/lib/backbone-min.js"></script>
         <script src="js/lib/mustache.js"></script>
+        <script src="js/lib/handlebars.js"></script>
         <script src="js/lib/spin.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
         <script src="js/models/UserDetail.js"></script>
@@ -90,15 +91,17 @@
 
 
 
-            <script id="adduserTemplate" type="text/html">
+            <script id="adduserTemplate" type="text/x-handlebars-template">
 
                 <div class="AddProjectForm">
                     <select id="fetchUser">
                          <option>Select User</option>
-                         <option value="mayank-sqr">mayank-sqr</option>
-                            <% _.each(users, function(value,key) { %>                  
+                            <!--<% _.each(users, function(value,key) { %>                  
                                 <option value="<%= value.login %>"><%= value.login %></option>
-                            <% });  %>
+                            <% });  %> -->
+                            {{#each users}}
+                                <option value="{{login}}">{{login}}</option>
+                            {{/each}}
                     </select>
 
                     <form id="gitForm">
